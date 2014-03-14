@@ -1,3 +1,5 @@
+
+<div id="details">
 <?php
 //$data is coming from the viewModel
 
@@ -7,9 +9,10 @@ foreach($data as $d){
     echo "\n".$d["title"];
     echo " <b>Genre: </b>";
     echo $d["genre"];
-    echo "<b>Platform</b>";
+    echo "<b>Platform: </b>";
     echo $d["platform"];
     echo "<br>";
 }
 
 ?>
+</div>

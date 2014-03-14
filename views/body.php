@@ -1,11 +1,11 @@
+<div id="gamesList">
+<ul>
 <?php
-echo "<center>";
 foreach($data as $d){
 
-    echo " <a href=?action=details&gameId=".$d["gameId"].">".$d["title"]."</a>";
+    echo "<li><a href=?action=details&gameId=".$d["gameId"].">".$d["title"]."</a></li>";
     echo "<br>";
 }
-echo "</center>";
-
-
 ?>
+</ul>
+</div>
