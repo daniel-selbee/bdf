@@ -2,6 +2,7 @@
 include 'models/viewModel.php';
 include 'models/gameModel.php';
 
+
 $pagename = 'index';
 
 $views = new viewModel();
@@ -19,7 +20,7 @@ if(!empty($_GET["action"])){
 
     if($_GET["action"]=="details"){
 
-        $result = $games->getOne($_GET["id"]);
+        $result = $games->getOne($_GET["gameId"]);
         $views->getView("views/details.php",$result);
     }
 
