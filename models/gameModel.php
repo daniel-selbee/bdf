@@ -25,7 +25,6 @@ JOIN genreTB
     }
 
     public function getOne($id=0){
-    echo $id;
         $sql = "
 	       SELECT games.gameId, games.title, genreTB.genre, platformTB.platform
  FROM games

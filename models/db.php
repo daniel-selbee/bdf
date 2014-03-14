@@ -4,7 +4,6 @@ class DB{
 
     public  function __construct(){
         //Try creating new PDO connection to DB, var_dump error if any issue with connection
-        echo "loaded";
         try {
 
             $dsn = "mysql:host=127.0.0.1;dbname=bdf1403;port=8889";
