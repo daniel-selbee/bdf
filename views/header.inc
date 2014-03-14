@@ -4,7 +4,7 @@
 
 </head>
 <header>
-    <h1>Game Critique</h1>
+    <h1><a href="?action=">Game Critique</a></h1>
     <p>Review your games here.</p>
     <nav>
         <ul>
