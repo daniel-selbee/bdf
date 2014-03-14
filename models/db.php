@@ -10,7 +10,7 @@ class DB{
             $db_user = "root";
             $db_pass = "root";
 
-            $this->db = new PDO($dsn, $db_user, $db_pass);
+            $this->$db = new PDO($dsn, $db_user, $db_pass);
 
 
         } catch (PDOException $error) {
