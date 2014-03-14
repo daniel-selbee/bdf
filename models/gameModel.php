@@ -1,22 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sulb1210
- * Date: 3/12/14
- * Time: 9:40 PM
- */
 
-class GenreModel {
+class gameModel {
 
-    private $db;
 
-    public function __construct($dsn, $user, $pass){
-        try {
-        $this->db = new \PDO($dsn, $user, $pass);
-        }
-        catch (\PDOException $e) {
-            var_dump($e);
-        }
+    public function __construct(){
+
     } // __construct
 
 
@@ -24,7 +12,7 @@ class GenreModel {
      * @return array Records from the database, as an array of arrays
      */
 
-    public function getGame() {
+    public function getAll() {
 
         $statement = $this->db->prepare("
 	       SELECT games.title, genreTB.genre, platformTB.platform
