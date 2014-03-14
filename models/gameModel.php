@@ -32,9 +32,7 @@ class GenreModel {
            JOIN genreTB,  platformTB
            WHERE  games.genreId = genreTB.genreId AND  games.platformId = platformTB.platformId;
         ");
-        // g stands for games, gametitle stands for title, gt stands for genreTB, gid stands for genreId
-        // need to join the games table with the genreTB
-        //select g.genreID, g.gametitle, gt.genre from games g join genreTB gt where g.gid  = gt.gid
+
 
         try {
         if ($statement->execute()){
@@ -45,7 +43,7 @@ class GenreModel {
         catch(\PDOException $e) {
             echo "Couldn't query the database.";
             var_dump($e);
-        }
+        } //catch
         return array();
-        } // getGenre
+        } // getGame
 } 

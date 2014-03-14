@@ -1,18 +1,12 @@
 <?php
-require_once "models/db.php";
-require_once "models/gameModel.php";
-require_once "views/details.php";
+include 'models/viewModel.php';
+include 'models/gameModel.php';
 
-$db_user = "root";
+$pagename = 'index';
 
-$db_pass = "root";
+$views = new viewModel();
+$games = new gameModel;
 
-$model = new GenreModel(MY_DSN, MY_USER, MY_PASS);
+//I want to show the header here
 
-$view = new GameViewHtml(); //can use the json or html view here
 
-$view->showHeader('Game Critique');
-
-$view->showFooter();
-
-$view->showGames($model->getGame());
