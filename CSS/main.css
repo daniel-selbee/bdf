@@ -93,6 +93,7 @@ b {
     padding-bottom: 20px;
     clear: both;
     padding-left: 20px;
+
 }
 
 
@@ -103,6 +104,11 @@ footer{
     width: 90%;
     position: fixed;
     bottom: 0;
+}
+/*footer copyright*/
+footer p:first-of-type{
+    font-size: 18px;
+    padding-bottom: 5px;
 }
 footer p{
     text-align: center;
