@@ -14,6 +14,7 @@ body{
     margin-right: auto;
     -webkit-border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    height: auto;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -85,9 +86,10 @@ b {
 
 /* GAMES LIST ON HOME PAGE */
 #gamesList{
-    padding-top: 50px;
+    margin-top: 60px;
     clear: both;
 }
+
 #gamesList ul li{
     list-style: none;
     font-family: 'Ubuntu Mono', sans-serif;
@@ -103,13 +105,14 @@ b {
 
 
 /*FOOTER*/
+
 footer{
+    margin-top: 20px;
     background-color: red;
     border-top: solid black 2px;
-    width: 90%;
-    position: fixed;
-    bottom: 0;
+    position: relative;
 }
+
 /*footer copyright*/
 footer p:first-of-type{
     font-size: 18px;
@@ -124,3 +127,7 @@ footer p{
 footer a:hover{
     color: white;
 }
+/*STICKY FOOTER*/
+
+
+/*
