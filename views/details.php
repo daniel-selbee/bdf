@@ -1,24 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sulb1210
- * Date: 3/12/14
- * Time: 10:42 PM
- */
+//$data is coming from the viewModel
+echo "<center>";
+foreach($data as $d){
 
-class GameViewHtml {
+    echo " <b>Title</b>";
+    echo $d["title"];
+    echo " <b>Genre</b>";
+    echo $d["genre"];
+    echo "<b>Platform</b>";
+    echo $d["platform"];
+    echo "<br>";
+}
+echo "</center>";
 
-    public function showHeader($pageTitle = '') {
-        include "header.inc";
-
-    }
-
-    public function showFooter() {
-        include "footer.inc";
-    }
-
-    public function showGames($rows){
-        include "games.inc";
-    }
-
-} 
+?>

@@ -24,7 +24,8 @@ class gameModel extends DB{
 
     public function getOne($id=0){
 
-        $sql = "	       SELECT games.title, genreTB.genre, platformTB.platform
+        $sql = "
+	       SELECT games.title, genreTB.genre, platformTB.platform
            FROM games
            JOIN genreTB,  platformTB
            WHERE  games.genreId = genreTB.genreId AND  games.platformId = platformTB.platformId";
