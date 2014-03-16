@@ -1,4 +1,6 @@
 <?php
+session_start();
+//my index page
 include 'models/viewModel.php';
 include 'models/gameModel.php';
 
@@ -9,7 +11,9 @@ $views = new viewModel();
 $games = new gameModel();
 
 //I want to show the header here
-$views->getView("views/header.inc");
+if(@$_GET["action"]!="checklogin" && @$_GET["action"]!="logout"){
+    $views->getView("views/header.inc");
+}
 
 //Here I want to show the initial list
 if(!empty($_GET["action"])){
@@ -24,8 +28,26 @@ if(!empty($_GET["action"])){
         $views->getView("views/details.php",$result);
     }
 
-} //empty closing
-else{
+    if($_GET["action"]=="login"){
+        $views->getView("views/loginform.html");
+    }
+
+    if($_GET["action"]=="checklogin"){
+        $result = $games->checkLogin($_POST["un"],$_POST["pass"]);
+
+        if(count($result)>0) {
+            header("location: protected.php");
+        }else{
+            $views->getView("views/header.inc");
+            echo "<center>Login Error</center>";
+            $views->getView("views/loginform.html");
+        }
+    }if($_GET["action"]=="logout"){
+        $games->logout();
+        header("location: index.php");
+    }
+
+}else{
     $result = $games->getAll();
     $views->getView("views/body.php", $result);
 
@@ -33,3 +55,5 @@ else{
 
 // Here I want to show the footer
 $views->getView("views/footer.inc");
+
+?>
