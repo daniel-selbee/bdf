@@ -4,10 +4,6 @@ include 'DB.php';
 class gameModel extends DB{
 
 
-    //public function __construct(){
-
-    //} // __construct
-
     public function getAll(){
 
         $sql =
