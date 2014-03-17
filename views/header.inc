@@ -18,3 +18,11 @@
     </nav>
 
 </header>
+    <? if($_SESSION["loggedin"]==1){
+    echo "<p><a href='/index.php?action=logout'>LOGOUT</a></p>";
+    echo "<a href= '/protected.php?action='>Protected</a> <a href='/protected.php?action=add'>Add</a></p>";
+
+}else{
+    "<a href='?action=login'>LOGIN</a>";
+}
+?>

@@ -40,7 +40,7 @@ JOIN genreTB
     }
 
     public function checkLogin($uname='', $password=''){
-        $sql = "select * from users where un = uname and pass=:password";
+        $sql = "select * from users where user_name=:uname and user_password=:password";
         $st = $this->db->prepare($sql);
         $st->execute(array(":uname"=>$uname,":password"=>$password));
 
