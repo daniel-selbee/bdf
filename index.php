@@ -39,7 +39,8 @@ if(!empty($_GET["action"])){
             header("location: protected.php");
         }else{
             $views->getView("views/header.inc");
-            echo "<center>Login Error</center>";
+            echo "<p id='login_error'>Login Error</p>";
+            echo "<style>form{ margin: 50px auto}</style>";
             $views->getView("views/loginform.html");
         }
     }if($_GET["action"]=="logout"){

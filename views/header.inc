@@ -13,16 +13,17 @@
     <nav>
         <ul>
             <li><a href="?action=">HOME</a></li>
-            <li><a href="?action=login">LOGIN</a></li>
-        </ul>
-    </nav>
+            <?
+            if($_SESSION["loggedin"]==1){
+                echo "<li><a href='index.php?action=logout'>LOGOUT</a></li>";
+                echo "<ul id='add_review'><li><a href='protected.php?action='>Protected</a></li><li><a href='protected.php?action=add'>Add Review</a></li></ul>";
+            }else{
+                echo "<li><a href='index.php?action=login'>LOGIN</a></li>";
+            }
 
-</header>
-    <? if($_SESSION["loggedin"]==1){
-    echo "<p><a href='/index.php?action=logout'>LOGOUT</a></p>";
-    echo "<a href= '/protected.php?action='>Protected</a> <a href='/protected.php?action=add'>Add</a></p>";
+        echo "</ul>";
 
-}else{
-    "<a href='?action=login'>LOGIN</a>";
-}
+    echo "</nav>";
+
+echo "</header>";
 ?>

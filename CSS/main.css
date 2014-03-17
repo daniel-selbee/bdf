@@ -156,3 +156,15 @@ form input[type=text], form input[type=password]{
         inset 0 1px 4px rgba(0,0,0,0.4);
     padding: 5px;
 }
+#login_error{
+    clear: both;
+    color: red;
+    font-family: 'Ubuntu Mono', sans-serif;
+    margin-top: 75px;
+}
+/* USER PAGE*/
+#add_review li{
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Ubuntu Mono', sans-serif;
+}
