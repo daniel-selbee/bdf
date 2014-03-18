@@ -14,20 +14,25 @@
         <ul>
             <li><a href="?action=">HOME</a></li>
             <?
+            //IF LOGGED IN
             if($_SESSION["loggedin"]==1){
                 /*MAIN NAV*/
-                echo "<li><a href='index.php?action=logout'>LOGOUT</a></li>";
-                /*WELCOME MESSAGE*/
-                echo "<p id='clear'></p>"; ?>
-            <!-- END PHP TAG -->
-                <p id='welcome'>Welcome <?php
-                    htmlentities($data["user_name"]);?></p>
+                echo "<li><a href='index.php?action=logout'>LOGOUT</a></li>";?>
+                <!-- END PHP TAG -->
+                <!-- WELCOME MESSAGE -->
+                <p id='clear'></p>
+
+                <p id="welcome">Welcome,
+                    <?php
+                    //WHAT DO I PUT HERE TO GET MY USER'S FULLNAME
+                    ?></p>
 
             <?php //START PHP TAG
                 /*PAGE NAV*/
                 echo "<p id='clear'></p>";
-                echo "<p id='access'><a href='protected.php?action='>Access Games</a></p>";
+                echo "<p id='access'><a href='views/protected.php?action='>Access Games</a></p>";
                 echo "<p id='add_review'><a href='protected.php?action=add'>Add Review</a></p>";
+            //IF LOGGED OUT
             }else{
                 echo "<li><a href='index.php?action=login'>LOGIN</a></li>";
             }
