@@ -41,6 +41,7 @@ JOIN genreTB
 
     public function checkLogin($uname='', $password=''){
         $sql = "select * from users where user_name=:uname and user_password=:password";
+        //MD5(CONCAT(user_salt,:password); not working above
         $st = $this->db->prepare($sql);
         $st->execute(array(":uname"=>$uname,":password"=>$password));
 

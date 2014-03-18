@@ -15,8 +15,19 @@
             <li><a href="?action=">HOME</a></li>
             <?
             if($_SESSION["loggedin"]==1){
+                /*MAIN NAV*/
                 echo "<li><a href='index.php?action=logout'>LOGOUT</a></li>";
-                echo "<ul id='add_review'><li><a href='protected.php?action='>Protected</a></li><li><a href='protected.php?action=add'>Add Review</a></li></ul>";
+                /*WELCOME MESSAGE*/
+                echo "<p id='clear'></p>"; ?>
+            <!-- END PHP TAG -->
+                <p id='welcome'>Welcome <?php
+                    htmlentities($data["user_name"]);?></p>
+
+            <?php //START PHP TAG
+                /*PAGE NAV*/
+                echo "<p id='clear'></p>";
+                echo "<p id='access'><a href='protected.php?action='>Access Games</a></p>";
+                echo "<p id='add_review'><a href='protected.php?action=add'>Add Review</a></p>";
             }else{
                 echo "<li><a href='index.php?action=login'>LOGIN</a></li>";
             }

@@ -1,6 +1,6 @@
 
 /*GOOGLE FONTS*/
-@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:700);
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
 @import url(http://fonts.googleapis.com/css?family=Audiowide);
 @import url(http://fonts.googleapis.com/css?family=Orbitron);
 
@@ -119,6 +119,7 @@ footer{
     background-color: red;
     border-top: solid black 2px;
     position: relative;
+    clear: both;
 }
 
 /*footer copyright*/
@@ -126,10 +127,21 @@ footer p:first-of-type{
     font-size: 18px;
     padding-bottom: 5px;
 }
-footer p{
+footer p:last-of-type{
     text-align: center;
+    margin: 20px auto;
+    margin-left: -10px;
+    padding: 0;
+    padding-bottom: 20px;
     font-size: 18px;
-    padding-bottom: 10px;
+}
+footer a:first-of-type{
+    padding:0;
+    margin:0;
+    padding-right: 10px;
+}
+footer a:last-of-type{
+    padding-left: 10px;
 }
 
 footer a:hover{
@@ -163,8 +175,38 @@ form input[type=text], form input[type=password]{
     margin-top: 75px;
 }
 /* USER PAGE*/
-#add_review li{
-    margin-left: auto;
-    margin-right: auto;
+p#clear{
+    clear: both;
+}
+p#welcome{
+    padding: 0;
+    margin: 0;
+    margin-top: 50px;
+    text-align: center;
+    width: 90%;
+}
+
+p#access{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 30%;
+    text-align: center;
     font-family: 'Ubuntu Mono', sans-serif;
+    font-size: 24px;
+    margin-top: 75px;
+    float: left;
+}
+p#add_review{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 30%;
+    text-align: center;
+    font-family: 'Ubuntu Mono', sans-serif;
+    font-size: 24px;
+    margin-top: 75px;
+    float: right;
 }
