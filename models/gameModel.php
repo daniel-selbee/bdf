@@ -41,7 +41,7 @@ JOIN genreTB
 
     public function checkLogin($uname='', $password=''){
         //$sql = "select * from users where user_name=:uname and user_password=:password";
-        //MD5(CONCAT(user_salt,:password); not working above
+        //MD5(CONCAT(:password, user_salt); not working above
         //select md5(concat(user_password,user_salt)) from users
         $sql = "select * from users where  user_name = :uname and user_password  = md5(CONCAT(:password,user_salt)) ";
 
