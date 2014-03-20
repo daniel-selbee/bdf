@@ -49,12 +49,12 @@ JOIN genreTB
 
         $st->execute(array(":uname"=>$uname,":password"=>$password));
 
-        //$num = $st->rowCount();
+
         $row = $st->fetchAll();
         @$row = $row[0];
 
         if(count($row) !=0){
-           // var_dump($row["user_id"]);
+
             $_SESSION["loggedin"] = 1;
             $_SESSION["session_user_name"] = $row["user_fullname"];
         }else{
@@ -69,5 +69,20 @@ JOIN genreTB
         $_SESSION["loggedin"] = 0;
         $_SESSION["session_user_name"]="";
     }
+
+    public function update($id=0, $email='', $fullname=''){
+        $sql = "update users set user_email = :email, user_fullname = :fullname where user_id = :id";
+
+        $st = $this->db->prepare($sql);
+        $st->execute(array(":id"=>$id, ":email"=>$email, ":fullname=>$fullname"));
+    }
+
+    public function delete($id=0){
+        $sql = "delete from users where user_id = :id";
+        $st = $this->db->prepare($sql);
+        $st->execute(array(":id"=>$id));
+    }
+    //ANY ADDITIONS TO USER TABLE SUCH AS FULL NAME AND SUCH GO HERE AND UPDATE
+    public function add[$email='',$fullname='']
 }
 ?>

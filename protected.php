@@ -32,7 +32,22 @@ if(!empty($_GET["action"])){
 }else if($_GET["action"]=="delete"){
     //PROTECTED PAGE //CRUD WILL GO IN HERE
 
+    $games->delete($_GET["user_id"]);
+    $result = $games->getAll();
+    $views->getView("views/protected.php", $result);
 
+
+}else if($_GET["action"]=="add"){
+
+    $views->getView("views/addform.html");
+}else if($_GET["action"]=="addaction"){
+
+    $games->add($_POST["user_name"], $_POST["pass"], $_POST["email"]);
+    $result = $games->getAll();
+    $views->getView("views/protected.php", $result);
+}else{
+        $result = $games->getAll();
+        $views->getView("views/protected.php", $result);
 }
 //HERE I WANT TO SHOW THE FOOTER
 $views->getView("views/footer.inc");
