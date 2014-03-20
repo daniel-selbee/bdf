@@ -20,5 +20,5 @@ if(!empty($_GET["action"])){
     //PROTECTED PAGE //CRUD WILL GO IN HERE LATER
 
 }
-//HERE I WNAT TO SHOW THE FOOTER
+//HERE I WANT TO SHOW THE FOOTER
 $views->getView("views/footer.inc");

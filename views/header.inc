@@ -13,24 +13,26 @@
     <nav>
         <ul>
             <li><a href="?action=">HOME</a></li>
-            <?
+    <?php
             //IF LOGGED IN
             if($_SESSION["loggedin"]==1){
                 /*MAIN NAV*/
                 echo "<li><a href='index.php?action=logout'>LOGOUT</a></li>";?>
                 <!-- END PHP TAG -->
                 <!-- WELCOME MESSAGE -->
+
                 <p id='clear'></p>
 
                 <p id="welcome">Welcome,
+
                     <?php
-                    //WHAT DO I PUT HERE TO GET MY USER'S FULLNAME
+                    echo $_SESSION["session_user_name"];
                     ?></p>
 
             <?php //START PHP TAG
                 /*PAGE NAV*/
                 echo "<p id='clear'></p>";
-                echo "<p id='access'><a href='views/protected.php?action='>Access Games</a></p>";
+                echo "<p id='access'><a href='protected.php?action='>Access Games</a></p>";
                 echo "<p id='add_review'><a href='protected.php?action=add'>Add Review</a></p>";
             //IF LOGGED OUT
             }else{
@@ -42,4 +44,4 @@
     echo "</nav>";
 
 echo "</header>";
-?>
+    ?>

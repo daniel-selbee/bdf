@@ -34,7 +34,7 @@ if(!empty($_GET["action"])){
 
     if($_GET["action"]=="checklogin"){
         $result = $games->checkLogin($_POST["user_name"],$_POST["password"]);
-
+//var_dump($result);
         if(count($result)>0) {
             header("location: protected.php");
         }else{
