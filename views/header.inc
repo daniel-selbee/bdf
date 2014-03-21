@@ -34,7 +34,7 @@
                 /*PAGE NAV*/
                 echo "<p id='clear'></p>";
                 echo "<p id='access'><a href='protected.php?action'>Access Games</a></p>";
-                echo "<p id='add_review'><a href='protected.php?action=add'>Add Game</a></p>";
+                echo "<p id='add_review'><a href='protected.php?action=add'>Add New Game</a></p>";
             //IF LOGGED OUT
             }else{
                 echo "<li><a href='index.php?action=login'>LOGIN</a></li>";

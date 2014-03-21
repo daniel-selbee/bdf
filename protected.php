@@ -24,15 +24,19 @@ if(!empty($_GET["action"])){
 
         //WORKING, BUT NOT DISPLAYING IN THE UPDATED LIST OR THE DATABASE
         }else if($_GET["action"]=="updateaction"){
+
+            //SHOULD BE USING UPDATE FROM GAMEMODEL. I DON'T SEE AN ISSUE HERE
             $games->update($_GET["id"],$_POST["title"], $_POST["genre"], $_POST["platform"]);
+
+            //TEST...SHOWING POSTED VARIABLES FROM UPDATE FUNCTION
             foreach($_POST as $p){
                 var_dump($p);
             }
-            $result = $games->getAll();
+
+            $result = $games->getAll(); //SHOULD REFRESH THE GAME LIST
             $views->getView("views/protected.php",$result);
         }
 }else if($_GET["action"]=="delete"){
-    //PROTECTED PAGE //CRUD WILL GO IN HERE
 
     $games->delete($_GET["id"]);
     $result = $games->getAll();
@@ -40,8 +44,9 @@ if(!empty($_GET["action"])){
 
 
 }else if($_GET["action"]=="add"){
-
+    //SHOULD DISPLAY THE ADD FORM, BUT IT ISN'T
     $views->getView("views/addform.html");
+
 }else if($_GET["action"]=="addaction"){
 
     $games->add($_POST["title"], $_POST["genre"], $_POST["platform"]);

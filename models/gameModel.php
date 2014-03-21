@@ -70,23 +70,36 @@ JOIN genreTB
         $_SESSION["loggedin"] = 0;
         $_SESSION["session_user_name"]="";
     }
-
+    //IS THE REFRESH PROBLEM IN HERE THEN? THE DATABASE ISN'T BEING UPDATED
     public function update($id=0, $title='', $genre='', $platform=''){
-        $sql = "update games set title = :title, genre = :genre, platform = :platform where gameId = :id";
+
+        //SQL STATEMENT SHOULD BE WORKING. I DOUBLE CHECKED THIS INSIDE OF SQL PRO
+        $sql =
+        "update games
+        set title = :title,
+        genreTB.genre = :genre,
+        platformTB.platform = :platform
+        where gameId = :id";
 
         $st = $this->db->prepare($sql);
         $st->execute(array(":id"=>$id, ":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
     }
 
     public function delete($id=0){
-        $sql = "delete from games where gameId = :id";
+
+        //SQL STATEMENT
+        $sql =
+        "delete from games
+        where gameId = :id";
+
         $st = $this->db->prepare($sql);
         $st->execute(array(":id"=>$id));
     }
-    //ANY ADDITIONS TO GAMES TABLE GO HERE
-    public function add($title='', $genre='', $platform){
-        $sql = "insert into games (title, genre, platform)
-                values (:title, :genre, :platform)";
+    //THE ADD FORM ISN'T SHOWING UP TO ALTER THIS YET
+    public function add($title='', $genre='', $platform=''){
+        $sql =
+        "insert into games (title, genre, platform)
+        values (:title, :genre, :platform)";
         $st = $this->db->prepare($sql);
         $st->execute(array(":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
 
