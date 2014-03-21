@@ -1,6 +1,20 @@
 <form action="?action=addaction" method="post">
 <br><input type="text" name="title" placeholder="Title"/>
-<br><input type="text" name="genre" placeholder="Genre"/>
-<br><input type="text" name="platform" placeholder="Platform"/>
+<br>
+    <select name="genre">
+        <option value="1">Action/Adventure</option>
+        <option value="2">First-Person-Shooter</option>
+        <option value="3">MMO</option>
+        <option value="4">Puzzle</option>
+        <option value="5">RPG</option>
+        <option value="6">Sandbox</option>
+        <option value="7">Simulation</option>
+        <option value="8">Survival Horror</option>
+    </select>
+<br>
+
+    <select name="platform">
+        <option value="9">Cross</option>
+    </select>
 <br><input type="submit" value="Add"/>
 </form>

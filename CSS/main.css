@@ -229,4 +229,19 @@ p#add_review{
     padding: 0px;
     margin: 0px;
     float: none;
+    background-color: red;
+    border: 2px, solid, black;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+#protected_list ul li:hover{
+    -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.3);
+}
+#protected_list ul li a{
+    width: 100%;
+}
+#protected_list ul li a:hover{
+    color: white;
 }

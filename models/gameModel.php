@@ -75,11 +75,13 @@ JOIN genreTB
 
         //SQL STATEMENT SHOULD BE WORKING. I DOUBLE CHECKED THIS INSIDE OF SQL PRO
         $sql =
-        "update games
+        "update games,genreTB,platformTB
         set title = :title,
         genreTB.genre = :genre,
         platformTB.platform = :platform
         where gameId = :id";
+
+
 
         $st = $this->db->prepare($sql);
         $st->execute(array(":id"=>$id, ":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
@@ -98,10 +100,10 @@ JOIN genreTB
     //THE ADD FORM ISN'T SHOWING UP TO ALTER THIS YET
     public function add($title='', $genre='', $platform=''){
         $sql =
-        "insert into games (title, genre, platform)
-        values (:title, :genre, :platform)";
+        "        insert into games(title, genreId, platformId)
+        values (:title, :genreId, :platformId)";
         $st = $this->db->prepare($sql);
-        $st->execute(array(":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
+        $st->execute(array(":title"=>$title, ":genreId"=>$genre, ":platformId"=>$platform));
 
 
 }

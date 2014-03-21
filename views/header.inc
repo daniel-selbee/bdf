@@ -39,7 +39,6 @@
             }else{
                 echo "<li><a href='index.php?action=login'>LOGIN</a></li>";
             }
-            //echo "<li><a href='index.php?action=register'>REGISTER</a></li>";
         echo "</ul>";
 
     echo "</nav>";
