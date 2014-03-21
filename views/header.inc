@@ -27,18 +27,19 @@
 
                     <?php
                     echo $_SESSION["session_user_name"];
+                    echo "<br>"."Your email: ".$_SESSION["session_user_email"];
                     ?></p>
 
             <?php //START PHP TAG
                 /*PAGE NAV*/
                 echo "<p id='clear'></p>";
-                echo "<p id='access'><a href='protected.php?action='>Access Games</a></p>";
-                echo "<p id='add_review'><a href='protected.php?action=add'>Add Review</a></p>";
+                echo "<p id='access'><a href='protected.php?action'>Access Games</a></p>";
+                echo "<p id='add_review'><a href='protected.php?action=add'>Add Game</a></p>";
             //IF LOGGED OUT
             }else{
                 echo "<li><a href='index.php?action=login'>LOGIN</a></li>";
             }
-
+            //echo "<li><a href='index.php?action=register'>REGISTER</a></li>";
         echo "</ul>";
 
     echo "</nav>";

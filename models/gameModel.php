@@ -57,6 +57,7 @@ JOIN genreTB
 
             $_SESSION["loggedin"] = 1;
             $_SESSION["session_user_name"] = $row["user_fullname"];
+            $_SESSION["session_user_email"] = $row[3];//[3] IS THE USER'S EMAIL
         }else{
             $_SESSION["loggedin"] = 0;
             $_SESSION["session_user_name"]="";
@@ -70,19 +71,26 @@ JOIN genreTB
         $_SESSION["session_user_name"]="";
     }
 
-    public function update($id=0, $email='', $fullname=''){
-        $sql = "update users set user_email = :email, user_fullname = :fullname where user_id = :id";
+    public function update($id=0, $title='', $genre='', $platform=''){
+        $sql = "update games set title = :title, genre = :genre, platform = :platform where gameId = :id";
 
         $st = $this->db->prepare($sql);
-        $st->execute(array(":id"=>$id, ":email"=>$email, ":fullname=>$fullname"));
+        $st->execute(array(":id"=>$id, ":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
     }
 
     public function delete($id=0){
-        $sql = "delete from users where user_id = :id";
+        $sql = "delete from games where gameId = :id";
         $st = $this->db->prepare($sql);
         $st->execute(array(":id"=>$id));
     }
-    //ANY ADDITIONS TO USER TABLE SUCH AS FULL NAME AND SUCH GO HERE AND UPDATE
-    public function add[$email='',$fullname='']
+    //ANY ADDITIONS TO GAMES TABLE GO HERE
+    public function add($title='', $genre='', $platform){
+        $sql = "insert into games (title, genre, platform)
+                values (:title, :genre, :platform)";
+        $st = $this->db->prepare($sql);
+        $st->execute(array(":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
+
+
+}
 }
 ?>

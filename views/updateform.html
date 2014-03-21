@@ -1,9 +1,11 @@
-<?php
-      foreach($data as $d{
+<?
+foreach($data as $d){
 ?>
-      <form>
-         action="?action=updateaction&id=<?=$d["game_id"?>" method="post">
-        <input type="text" name="email" value="<?=$d['user_email']?>"/>
-        <br><input type="SUBMIT" value="Update"/>
-
+      <form action="?action=updateaction&id=<?=$d['gameId']?>" method="post">
+      <input type="text" name="title" value="<?=$d['title']?>"/>
+      <br><input type="text" name="genre" value="<?=$d['genre']?>">
+      <br><input type="text" name="platform" value="<?=$d['platform']?>">
+      <br>"."<input type="SUBMIT" value="Update"/>
       </form>
+
+<?}?>

@@ -34,9 +34,9 @@ if(!empty($_GET["action"])){
 
     if($_GET["action"]=="checklogin"){
         $result = $games->checkLogin($_POST["user_name"],$_POST["password"]);
-//var_dump($result);
         if(count($result)>0) {
-            header("location: protected.php");
+            //IS THIS INTERFERING WITH "action" WHEN LOGGED IN
+            header("location: protected.php?action=");
         }else{
             $views->getView("views/header.inc");
             echo "<p id='login_error'>Login Error</p>";

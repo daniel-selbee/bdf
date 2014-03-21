@@ -14,25 +14,27 @@ $games = new gameModel();
 //I want to show the header here
 $views->getView("views/header.inc");
 
-//Here I want to show the initial list
+
 if(!empty($_GET["action"])){
+        if($_GET["action"]=="update"){
 
-    if($_GET["action"]=="update"){
-
-        $result = $games->getOne($_GET["game_id"]);
-        $views->getView("views/updateform.html", $result);
-
+            $result = $games->getOne($_GET["id"]);
+            $views->getView("views/updateform.html", $result);
 
 
-    }else if($_GET["action"]=="updateaction"){
-        $games->update($_GET["user_id"],$_POST["user_email"]);
-        $result = $games->getAll();
-        $views->getView("views/protected.php",$result);
-    }
+        //WORKING, BUT NOT DISPLAYING IN THE UPDATED LIST OR THE DATABASE
+        }else if($_GET["action"]=="updateaction"){
+            $games->update($_GET["id"],$_POST["title"], $_POST["genre"], $_POST["platform"]);
+            foreach($_POST as $p){
+                var_dump($p);
+            }
+            $result = $games->getAll();
+            $views->getView("views/protected.php",$result);
+        }
 }else if($_GET["action"]=="delete"){
     //PROTECTED PAGE //CRUD WILL GO IN HERE
 
-    $games->delete($_GET["user_id"]);
+    $games->delete($_GET["id"]);
     $result = $games->getAll();
     $views->getView("views/protected.php", $result);
 
@@ -42,7 +44,7 @@ if(!empty($_GET["action"])){
     $views->getView("views/addform.html");
 }else if($_GET["action"]=="addaction"){
 
-    $games->add($_POST["user_name"], $_POST["pass"], $_POST["email"]);
+    $games->add($_POST["title"], $_POST["genre"], $_POST["platform"]);
     $result = $games->getAll();
     $views->getView("views/protected.php", $result);
 }else{
