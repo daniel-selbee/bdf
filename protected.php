@@ -21,8 +21,6 @@ if(!empty($_GET["action"])){
             $result = $games->getOne($_GET["id"]);
             $views->getView("views/updateform.html", $result);
 
-
-        //WORKING, BUT NOT DISPLAYING IN THE UPDATED LIST OR THE DATABASE
         }else if($_GET["action"]=="updateaction"){
 
             //SHOULD BE USING UPDATE FROM GAMEMODEL. I DON'T SEE AN ISSUE HERE

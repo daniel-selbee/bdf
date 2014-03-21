@@ -81,8 +81,6 @@ JOIN genreTB
         platformTB.platform = :platform
         where gameId = :id";
 
-
-
         $st = $this->db->prepare($sql);
         $st->execute(array(":id"=>$id, ":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
     }
@@ -100,7 +98,7 @@ JOIN genreTB
     //THE ADD FORM ISN'T SHOWING UP TO ALTER THIS YET
     public function add($title='', $genre='', $platform=''){
         $sql =
-        "        insert into games(title, genreId, platformId)
+        "insert into games(title, genreId, platformId)
         values (:title, :genreId, :platformId)";
         $st = $this->db->prepare($sql);
         $st->execute(array(":title"=>$title, ":genreId"=>$genre, ":platformId"=>$platform));
