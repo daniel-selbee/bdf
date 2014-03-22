@@ -22,16 +22,8 @@ if(!empty($_GET["action"])){
             $views->getView("views/updateform.html", $result);
 
         }else if($_GET["action"]=="updateaction"){
-
-            //SHOULD BE USING UPDATE FROM GAMEMODEL. I DON'T SEE AN ISSUE HERE
-            $games->update($_GET["id"],$_POST["title"], $_POST["genre"], $_POST["platform"]);
-
-            //TEST...SHOWING POSTED VARIABLES FROM UPDATE FUNCTION
-            foreach($_POST as $p){
-                var_dump($p);
-            }
-
-            $result = $games->getAll(); //SHOULD REFRESH THE GAME LIST
+            $games->update($_GET["id"],$_POST["title"],$_POST["genre"],$_POST["platform"]);
+            $result = $games->getAll(); //REFRESHES THE GAME LIST
             $views->getView("views/protected.php",$result);
 
             }else if($_GET["action"]=="delete"){

@@ -70,19 +70,20 @@ JOIN genreTB
         $_SESSION["loggedin"] = 0;
         $_SESSION["session_user_name"]="";
     }
-    //IS THE REFRESH PROBLEM IN HERE THEN? THE DATABASE ISN'T BEING UPDATED
+
     public function update($id=0, $title='', $genre='', $platform=''){
-
-        //SQL STATEMENT SHOULD BE WORKING. I DOUBLE CHECKED THIS INSIDE OF SQL PRO
         $sql =
-        "update games,genreTB,platformTB
-        set title = :title,
-        genreTB.genre = :genre,
-        platformTB.platform = :platform
-        where gameId = :id";
-
+            "UPDATE  games
+LEFT JOIN
+        genreTB
+ON      genreTB.genreId = games.genreId
+left join
+	platformTB
+on platformTB.platformId = games.platformId
+SET     title = :title, genreTB.genre = :genre, platformTb.platform = :platform
+WHERE   gameId = :id";
         $st = $this->db->prepare($sql);
-        $st->execute(array(":id"=>$id, ":title"=>$title, ":genre"=>$genre, ":platform"=>$platform));
+        $st->execute(array(":id"=>$id,":title"=>$title,":genre"=>$genre,":platform"=>$platform));
     }
 
     public function delete($id=0){

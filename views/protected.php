@@ -2,6 +2,7 @@
 <?php
 //protected view
 foreach($data as $d){
+    echo "<p id=clear></p>";
     echo " <b>Title: </b>";
     echo "\n".$d["title"];
     echo " <b>Genre: </b>";
@@ -10,8 +11,8 @@ foreach($data as $d){
     echo $d["platform"];
     echo "<br>";
     //echo " <a href=''>Review</a>"; I MIGHT ADD THIS FUNCTIONALITY LATER
-    echo "<ul><li> <a href='?action=update&id=".$d["gameId"]."'>Edit</a></li>";
-    echo " <li><a href='?action=delete&id=".$d["gameId"]."'>Delete</a></li></ul>";
+    echo "<button><a href='?action=update&id=".$d["gameId"]."'>Edit</a></button>";
+    echo "<button><a href='?action=delete&id=".$d["gameId"]."'>Delete</a></button>";
 }
 ?>
 </div>

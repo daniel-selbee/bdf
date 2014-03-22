@@ -214,34 +214,21 @@ p#add_review{
 /*PROTECTED PAGE*/
 #protected_list{
     clear: both;
-    -webkit-column-count: 2;-moz-column-count: 2;column-count: 2;
 }
 
-#protected_list b{
-    clear: both;
-}
-
-#protected_list ul{
-    list-style: none;
-    margin: 0;
-}
-#protected_list ul li{
-    padding: 0px;
-    margin: 0px;
-    float: none;
-    background-color: red;
-    border: 2px, solid, black;
-    border-radius: 10px;
+#protected_list button{
+    margin-left: 20px;
     text-align: center;
-    margin-bottom: 5px;
+    background-color: red;
 }
-#protected_list ul li:hover{
-    -webkit-box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.3);
-    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.3);
+
+#protected_list p#clear{
+    clear:both;
 }
-#protected_list ul li a{
-    width: 100%;
+#protected_list a{
+    margin: 0;
+    padding: 0;
 }
-#protected_list ul li a:hover{
+#protected_list a:hover{
     color: white;
 }
