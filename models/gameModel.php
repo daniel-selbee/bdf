@@ -74,14 +74,14 @@ JOIN genreTB
     public function update($id=0, $title='', $genre='', $platform=''){
         $sql =
             "UPDATE  games
-LEFT JOIN
-        genreTB
-ON      genreTB.genreId = games.genreId
-left join
-	platformTB
-on platformTB.platformId = games.platformId
-SET     title = :title, genreTB.genre = :genre, platformTb.platform = :platform
-WHERE   gameId = :id";
+            LEFT JOIN
+            genreTB
+            ON genreTB.genreId = games.genreId
+            left join
+	        platformTB
+            on platformTB.platformId = games.platformId
+            SET     title = :title, genreTB.genre = :genre, platformTb.platform = :platform
+            WHERE   gameId = :id";
         $st = $this->db->prepare($sql);
         $st->execute(array(":id"=>$id,":title"=>$title,":genre"=>$genre,":platform"=>$platform));
     }
